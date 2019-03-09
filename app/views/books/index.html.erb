@@ -1,0 +1,22 @@
+<section class="section">
+    <div class="container">
+        <h1 class="title">Books</h1>
+        <% @books.each_with_index do |book, index| %>
+            <% if is_start_of_row(index, @books_per_row) %>
+                <div class="tile is-ancestor">
+            <% end %>
+            <div class="tile is-parent <%= tile_column_class(@MAX_COLUMNS, @books_per_row) %>">
+                <article class="tile is-child notification <%= tile_colour_class(index, @COLOUR_CLASSES) %>">
+                    <p class="title"><%= book.title %></p>
+                    <p class="subtitle"><%= book.author %></p>
+                    <div class="content">
+                        <%= link_to 'Show', book_path(book) %>
+                    </div>
+                </article>
+            </div>
+            <% if is_end_of_row(index, @books_per_row, @books.length) %>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+</section>
