@@ -1,0 +1,30 @@
+<%= form_with(model: [@book, @book.reviews.build], local: true) do |form| %>
+
+    <div class="field">
+        <%= form.label :reviewer, class: "label" %>
+        <div class="control">
+            <%= form.text_field :reviewer, class: "input" %>
+        </div>
+    </div>
+
+    <div class="field">
+        <%= form.label :rating, class: "label" %>
+        <label class="radio"><%= form.radio_button :rating, "1", class: "radio" %>&nbsp;1</label>
+        <label class="radio"><%= form.radio_button :rating, "2", class: "radio" %>&nbsp;2</label>
+        <label class="radio"><%= form.radio_button :rating, "3", class: "radio" %>&nbsp;3</label>
+        <label class="radio"><%= form.radio_button :rating, "4", class: "radio" %>&nbsp;4</label>
+        <label class="radio"><%= form.radio_button :rating, "5", class: "radio" %>&nbsp;5</label>
+    </div>
+
+    <div class="field">
+        <%= form.label :body, "Review", class: "label" %>
+        <div class="control">
+            <%= form.text_area :body, class: "textarea" %>
+        </div>
+    </div>
+
+    <div class="field">
+        <%= form.submit "Save", class: "button is-primary" %>
+    </div>
+
+<% end %>

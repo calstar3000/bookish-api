@@ -19,6 +19,18 @@
                 </div>
                 </div>
             </div>
+
+            <h2 class="subtitle">Reviews (<%= @book.reviews.length %>)</h2>
+            <% if @book.reviews.empty? %>
+                <p>No reviews</p>
+                <br>
+            <% else %>
+                <%= render @book.reviews %>
+            <% end %>
+
+            <h2 class="subtitle">Add a review</h2>
+
+            <%= render "reviews/form" %>
         </div>
         <div class="column auto"></div>
       </div>
