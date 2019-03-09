@@ -1,10 +1,26 @@
 
-<p>
-  <strong>Title:</strong>
-  <%= @book.title %>
-</p>
+<section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column auto"></div>
+        <div class="column is-half">
+            <h1 class="title"><%= @book.title %></h1>
+            <h2 class="subtitle"><%= @book.author %></h2>
 
-<p>
-  <strong>Author:</strong>
-  <%= @book.author %>
-</p>
+            <div class="level">
+                <div class="level-left">
+                <div class="level-item">
+                    <%= link_to 'Edit', edit_book_path(@book), class: "button is-primary" %>
+                </div>
+                </div>
+                <div class="level-right">
+                <div class="level-item">
+                    <%= link_to 'Back', books_path, class: "link is-info" %>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="column auto"></div>
+      </div>
+    </div>
+</section>

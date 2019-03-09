@@ -10,7 +10,8 @@
                     <p class="title"><%= book.title %></p>
                     <p class="subtitle"><%= book.author %></p>
                     <div class="content">
-                        <%= link_to 'Show', book_path(book) %>
+                        <%= link_to 'Details', book_path(book), class: "button" %>
+                        <%= link_to 'Remove', book_path(book), method: :delete, data: { confirm: "Are you sure?" }, class: "button is-danger" %>
                     </div>
                 </article>
             </div>
